@@ -27,7 +27,7 @@ public class ProbandoFechas {
             System.out.println("Aun no es tu cumple");
         }else if (miCumple.getTimeWithoutSeconds().before(fecha.getTimeWithoutSeconds())){
             System.out.println("Ya cumpliste");
-        }else if (miCumple.getTimeWithoutSeconds().equals(fecha.getTimeWithoutSeconds())){
+        }else if (miCumple.compareTo(fechaDate)){
             System.out.println("Felicidades!!");
         }
     }
