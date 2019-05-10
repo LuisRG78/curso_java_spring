@@ -21,7 +21,7 @@ public class Dragon extends Mascota implements Depredador{
     
     @Override
     public void mover() {
-        System.out.print("- Soy " + nombre + "!! Puedo correr a gran velocidad.");
+        System.out.println("- Soy " + nombre + "!! Puedo correr a gran velocidad.");
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Dragon extends Mascota implements Depredador{
 
     @Override
     public void comer() {
-        System.out.print("Te churrasca y te come.");
+        System.out.println("Te churrasca y te come.");
     }  
 
     @Override

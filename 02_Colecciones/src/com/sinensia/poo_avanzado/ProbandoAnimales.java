@@ -29,6 +29,22 @@ public class ProbandoAnimales {
         TortugaNinja leonardo = new TortugaNinja("Leonardo", 175.5f);
         leonardo.mover();
         leonardo.comer();
+        
+        try{
+            leonardo.volar();
+        }catch (UnsupportedOperationException ex){
+            System.err.println(ex.getMessage());
+        }catch(StringIndexOutOfBoundsException ex){
+            System.err.println("Error en el String: " + ex.getMessage());
+        }catch(Exception ex){
+            System.err.println("Error general: " + ex.getMessage());
+            System.err.println("---------------");
+            ex.printStackTrace();
+        }finally{
+            //Este código siempre se va a ejecutar
+            //Se usa para cerrar recursos (BD, etc)
+            System.out.println("Siempre me ejecuto. Cerremos recursos");
+        }
         System.out.println("------------------------------------------");
         
         Gato micifuz = new Gato("Micifuz", 54.5f);
@@ -44,9 +60,7 @@ public class ProbandoAnimales {
         ((Mascota)dragoncito).pedirComida();
         dragoncito.comer();
         dragoncito.volar();
-        System.out.println("------------------------------------------");
-        
-       
+        System.out.println("------------------------------------------");      
         
         Tigre sandokan = new Tigre("Sandokan", 150.5f);
         

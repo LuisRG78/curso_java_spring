@@ -17,7 +17,7 @@ public class Gato extends Mascota implements Depredador, Mamifero{
     
     @Override
     public void mover() {
-        System.out.print("- Soy " + nombre + "!! Marramiauuuuu!!.");
+        System.out.println("- Soy " + nombre + "!! Marramiauuuuu!!.");
     }
     
     @Override

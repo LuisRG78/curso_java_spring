@@ -17,12 +17,12 @@ public class Tigre extends AnimalSalvaje implements Depredador, Mamifero{
 
     @Override
     public void mover() {
-         System.out.print("- Soy " + nombre + "!! Puedo correr a gran velocidad.");
+         System.out.println("- Soy " + nombre + "!! Puedo correr a gran velocidad.");
     }
 
     @Override
     public void comer() {
-        System.out.print(" Como las presas que cazo.");
+        System.out.println(" Como las presas que cazo.");
     }
     @Override
     public void volar() {

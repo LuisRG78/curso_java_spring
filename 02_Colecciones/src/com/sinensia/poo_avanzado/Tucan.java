@@ -17,12 +17,12 @@ public class Tucan extends AnimalSalvaje {
     
     @Override
     public void mover(){
-        System.out.print("- Soy " + nombre + "!! Volando voy!!");   
+        System.out.println("- Soy " + nombre + "!! Volando voy!!");   
     }
     
     @Override
     public void comer(){
-        System.out.print(" Como gusanos y frutos del bosque!!.");
+        System.out.println(" Como gusanos y frutos del bosque!!.");
     }
     
     @Override

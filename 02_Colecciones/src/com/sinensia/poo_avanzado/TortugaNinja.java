@@ -19,7 +19,7 @@ public class TortugaNinja extends Mascota {
 
     @Override
     public void mover() {
-        System.out.print("- Soy " + nombre + "!! Reptando voy!!.");
+        System.out.println("- Soy " + nombre + "!! Reptando voy!!.");
     }
     
     @Override

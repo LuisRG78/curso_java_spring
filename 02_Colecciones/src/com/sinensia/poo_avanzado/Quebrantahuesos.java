@@ -17,12 +17,12 @@ public class Quebrantahuesos extends AnimalSalvaje{
     
     @Override
     public void mover() {
-        System.out.print("- Soy " + nombre + "!! Puedo caminar pero lo mio es volar.");
+        System.out.println("- Soy " + nombre + "!! Puedo caminar pero lo mio es volar.");
     }  
     
     @Override
     public void comer(){
-        System.out.print(" Me zampo los restos que dejan los buitres!!.");
+        System.out.println(" Me zampo los restos que dejan los buitres!!.");
     }
     
     @Override
