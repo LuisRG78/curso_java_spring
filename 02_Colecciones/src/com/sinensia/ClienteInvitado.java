@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia;
 
 /**
  *
@@ -35,6 +35,11 @@ public class ClienteInvitado extends Cliente{
         this.duracionMax = duracionMax;
     }
     
-    
+    @Override
+    public void mostrar(){
+        System.out.print("Invitado - ");
+        super.mostrar();
+        System.out.println(" Duración máxima: " + duracionMax);
+    }  
     
 }

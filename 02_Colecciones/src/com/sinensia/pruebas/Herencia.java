@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia.pruebas;
+
+import com.sinensia.ClienteInvitado;
+import com.sinensia.ClienteVip;
 
 /**
  *
  * @author Admin
  */
-public class PruebasHerencia {
+public class Herencia {
     
     public static void probandoHerencia(){
         ClienteInvitado cliInv = new ClienteInvitado(0, "Messi", null);
@@ -22,7 +25,5 @@ public class PruebasHerencia {
         
         System.out.println("Cliente VIP: " + vip.getNombre() + ", Beneficio: " +
                 vip.getBeneficios());
-    }
-    
-    
+    }   
 }

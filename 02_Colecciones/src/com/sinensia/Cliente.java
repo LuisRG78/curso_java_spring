@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia;
 
 import java.util.Date;
 
@@ -21,12 +21,21 @@ public class Cliente {
 
     public Cliente(long cliente_id, String nombre, String email) {
         this.cliente_id = cliente_id;
+        
+        if(nombre == null || nombre == ""){
+            //throw new Exception("Nombre de Cliente inválido");
+            System.err.println("Nombre de cliente inválido");
+        }
         this.nombre = nombre;
         this.email = email;
         this.activo = true;
     }
     
     public void setNombre(String nombre){
+        if(nombre == null || nombre == ""){
+            //throw new Exception("Nombre de Cliente inválido");
+            System.err.println("Nombre de cliente inválido");
+        }
         this.nombre = nombre;
     }
     
@@ -52,6 +61,12 @@ public class Cliente {
     
     public long getCliente_id() {
         return this.cliente_id;
+    }
+    
+    public void mostrar(){
+        System.out.println("Cliente: " + nombre);
+        System.out.println(" Id: " + this.cliente_id);
+        System.out.println(" Email: " + this.getEmail());
     }
     
     

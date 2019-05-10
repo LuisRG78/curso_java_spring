@@ -3,33 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia.pruebas;
 
-import java.util.GregorianCalendar;
+import com.sinensia.FechaDayMonthYear;
 import java.util.Date;
 
 /**
  *
  * @author Admin
  */
-public class ProbandoFechas {
+public class Fechas {
     
     public static void probar(){
-        FechaDayMonthYear fecha = new FechaDayMonthYear(2019, 4, 8);
-        //;
+        FechaDayMonthYear fecha = new FechaDayMonthYear();
+        fecha.set(2019, 4, 9);
         System.out.println("Fecha: " + fecha.getTime());
         Date fechaDate = fecha.getTime();
         System.out.println("Fecha: " + fechaDate.toString());
         
         FechaDayMonthYear miCumple = new FechaDayMonthYear(2019, 4, 8);
-       
-        if(miCumple.getTimeWithoutSeconds().after(fecha.getTimeWithoutSeconds())){
-            System.out.println("Aun no es tu cumple");
-        }else if (miCumple.getTimeWithoutSeconds().before(fecha.getTimeWithoutSeconds())){
-            System.out.println("Ya cumpliste");
-        }else if (miCumple.compareTo(fechaDate)){
+        
+        if(miCumple.equals(fecha)){
             System.out.println("Felicidades!!");
         }
+        else if (miCumple.before(fecha)){
+            System.out.println("Ya cumpliste");
+        }
+        else if (miCumple.after(fecha)){
+            System.out.println("Aún no es tu cumple");
+        }
     }
-    
 }

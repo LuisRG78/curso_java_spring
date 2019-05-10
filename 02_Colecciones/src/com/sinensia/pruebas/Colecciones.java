@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia.pruebas;
 
+import com.sinensia.Cliente;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  *
  * @author Admin
  */
-public class PruebasColecciones {
+public class Colecciones {
     
-    static void ejemploHashMap(){
+    public static void ejemploHashMap(){
         HashMap<String, Cliente> diccClientes;
         diccClientes = new HashMap<String, Cliente>();
         Cliente ana = new Cliente(1, "Ana", null);
@@ -42,7 +45,31 @@ public class PruebasColecciones {
         
     }
     
-    static void ejemploListas(){
+    public static void ejemploSet(){
+        HashSet<Cliente> conjuntoClientes;
+        conjuntoClientes = new HashSet<Cliente>();
+        Cliente ana = new Cliente(1, "Ana", null);
+        Cliente luis = new Cliente(2, "Luis", null);
+        Cliente bea = new Cliente(3, "Bea", null);
+        conjuntoClientes.add(ana);
+        conjuntoClientes.add(ana);
+        conjuntoClientes.add(luis);
+        conjuntoClientes.add(bea);
+        
+        System.out.println("\nMostrar clientes con HashSet - bucle foreach:");
+        for(Cliente cli : conjuntoClientes){
+            cli.mostrar();
+        }
+        
+        System.out.println("\nMostrar clientes con HashSet - Iterator:");
+        Iterator<Cliente> it = conjuntoClientes.iterator();
+        while(it.hasNext()){
+            Cliente cli = it.next();
+            cli.mostrar();            
+        }
+    }
+    
+    public static void ejemploListas(){
         ArrayList<Cliente> listaClientes = new ArrayList();
     
         listaClientes.add(new Cliente(1, "Juan", "juan@gmail.com"));

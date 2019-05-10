@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg02_colecciones;
+package com.sinensia;
 
 /**
  *
@@ -16,6 +16,11 @@ public class ClienteVip extends Cliente{
     public ClienteVip(long cliente_id, String nombre, String email) {
         super(cliente_id, nombre, email);
     }
+    
+     public ClienteVip(long cliente_id, String nombre, String email, String beneficios) {
+        super(cliente_id, nombre, email);
+        this.beneficios = beneficios;
+    }
 
     public String getBeneficios() {
         return beneficios;
@@ -25,6 +30,12 @@ public class ClienteVip extends Cliente{
         this.beneficios = beneficios;
     }
     
+    @Override
+    public void mostrar(){
+        System.out.print("VIP - ");
+        super.mostrar();
+        System.out.println(" Beneficios: " + beneficios);
+    }  
     
     
 }
