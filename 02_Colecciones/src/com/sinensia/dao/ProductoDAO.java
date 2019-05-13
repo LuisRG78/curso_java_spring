@@ -67,9 +67,9 @@ public class ProductoDAO implements InterfazDAO<Producto>{
     @Override
     public void modificar(Producto valor) {
         for (Map.Entry<Long, Producto> entrada : mapa.entrySet()){        
-            if(entrada.getKey() == valor.getProd_id()){
+            if(entrada.getKey() == valor.getId()){
                 //entrada.setValue(valor);
-                mapa.put(valor.getProd_id(), valor);
+                mapa.put(valor.getId(), valor);
             }            
         }
     }

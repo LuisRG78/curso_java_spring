@@ -6,6 +6,7 @@
 package com.sinensia.dao;
 
 
+import com.sinensia.Entidad;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.Map;
  * @author Admin
  * @param <T>
  */
-public class GenericoDAO<T> implements InterfazDAO<T>{
+public class GenericoDAO<T extends Entidad> implements InterfazDAO<T>{
     
     HashMap<Long, T> mapa;
     

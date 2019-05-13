@@ -9,7 +9,7 @@ package com.sinensia;
  *
  * @author Admin
  */
-public class Producto {
+public class Producto extends Entidad{
     
     private long prod_id;
     private String nombre_prod;
@@ -17,7 +17,7 @@ public class Producto {
     private int stock;
 
     public Producto(long prod_id, String nombre_prod, double precio) {
-        this.prod_id = prod_id;
+        super(prod_id);
         this.nombre_prod = nombre_prod;
         if(nombre_prod == null || nombre_prod == ""){
             //throw new Exception("Nombre de Cliente inválido");
@@ -28,7 +28,7 @@ public class Producto {
     }
     
     public Producto(long prod_id, String nombre_prod, double precio, int stock) {
-        this.prod_id = prod_id;
+        super(prod_id);
         this.nombre_prod = nombre_prod;
         if(nombre_prod == null || nombre_prod == ""){
             //throw new Exception("Nombre de Cliente inválido");
@@ -38,14 +38,6 @@ public class Producto {
         this.stock = stock;
     }
     
-    public long getProd_id() {
-        return prod_id;
-    }
-
-    public void setProd_id(int prod_id) {
-        this.prod_id = prod_id;
-    }
-
     public String getNombre_prod() {
         return nombre_prod;
     }
