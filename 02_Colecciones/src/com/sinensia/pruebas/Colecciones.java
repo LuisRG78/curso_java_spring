@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Date;
+import java.util.TreeMap;
 
 /**
  *
@@ -41,6 +43,20 @@ public class Colecciones {
             System.out.println("Cliente " + parClaveValor.getKey());
             Cliente cliente = parClaveValor.getValue();
             System.out.println(" Nombre " + cliente.getNombre());
+        }
+        
+        diccClientes.put("d4", new Cliente(7,"Fulano", "fff@fff.com"));
+        Map<Date, Cliente> mapClientesFecha = new TreeMap<Date, Cliente>();
+        mapClientesFecha.put(new Date(1982, 4, 9), luis);
+        mapClientesFecha.put(new Date(1981, 4, 9), new Cliente(7,"Fulano", "fff@fff.com"));
+        mapClientesFecha.put(new Date(1982, 9, 19), new Cliente(8,"Mengano", "mengano@fff.com"));
+        mapClientesFecha.put(new Date(1980, 7, 10), diccClientes.get("c3"));
+        System.out.println("\n\n************** Mapa ordenado por fecha ****************\n");
+        
+        for(Map.Entry<Date, Cliente> entrada : mapClientesFecha.entrySet()){
+            System.out.println("\nCliente\n- Clave: " + entrada.getKey());
+            Cliente cli = entrada.getValue();
+            System.out.println("- Valor: " + cli.toString());
         }
         
     }

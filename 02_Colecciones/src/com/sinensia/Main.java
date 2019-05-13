@@ -5,9 +5,12 @@
  */
 package com.sinensia;
 
+import static com.sinensia.dao.probandoDAO.probarCliente;
+import static com.sinensia.dao.probandoDAO.probarProducto;
+import com.sinensia.genericos.ProbandoGenericos;
 import com.sinensia.pruebas.Colecciones;
 import com.sinensia.pruebas.Fechas;
-import com.sinensia.pruebas.Herencia;
+import static com.sinensia.pruebas.Herencia.probandoHerencia;
 import com.sinensia.pruebas.Polimorfismo;
 import com.sinensia.poo_avanzado.ProbandoAnimales;
 
@@ -32,6 +35,9 @@ public class Main {
         //Polimorfismo.polimorfeandoConHashMap();
         //Colecciones.ejemploSet();
         //Polimorfismo.polimorfeandoConTreeMap();
-        ProbandoAnimales.probarClasesAbstractas();
+        //ProbandoAnimales.probarClasesAbstractas();
+        //ProbandoGenericos.probarMetodo();
+        probarCliente();
+        //probarProducto();
     }   
 }

@@ -5,22 +5,24 @@
  */
 package com.sinensia;
 
+import com.sinensia.dao.GenericoDAO;
 import java.util.Date;
 
 /**
  *
  * @author Admin
  */
-public class Cliente {
-    private long cliente_id;
-    private String nombre;
+public class Cliente extends Entidad{
+    
+    protected String nombre;
     private Date fecha_nac;
     private char genero;
     private boolean activo;
     private String email;
 
-    public Cliente(long cliente_id, String nombre, String email) {
-        this.cliente_id = cliente_id;
+    public Cliente(long id, String nombre, String email){
+        super(id);
+        //this.cliente_id = cliente_id;
         
         if(nombre == null || nombre == ""){
             //throw new Exception("Nombre de Cliente inválido");
@@ -59,24 +61,15 @@ public class Cliente {
         return activo;
     }
     
-    public long getCliente_id() {
-        return this.cliente_id;
-    }
-    
     public void mostrar(){
         System.out.println("Cliente: " + nombre);
-        System.out.println(" Id: " + this.cliente_id);
+        System.out.println(" Id: " + this.id);
         System.out.println(" Email: " + this.getEmail());
     }
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        //return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Cliente [" + id + ", " + nombre + ", " + email + "]";
+    }     
 }

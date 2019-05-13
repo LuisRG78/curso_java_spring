@@ -54,6 +54,7 @@ public class ProbandoAnimales {
         
         Cliente yo = new Cliente(10, "Luismi", "aaa@nnn.com");
         Animal dragoncito = new Dragon("Drogo", 1000);
+        dragoncito.comer();
         Mascota miMascota = (Mascota)dragoncito;
         miMascota.setPropietario(yo);
         ((Mascota)dragoncito).setPropietario(yo);

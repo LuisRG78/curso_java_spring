@@ -9,11 +9,14 @@ package com.sinensia;
  *
  * @author Admin
  */
-public class Productos {
-    
-    private static int producto_id;
-    private String nombre_prod;
-    private double precio;
-    private int stock;
-    
-}
+public class Entidad{   
+        protected long id;
+
+        public Entidad(long id) {
+            this.id = id;
+        }
+
+        public long getId() { return id; }
+        public void setId(long id) { this.id = id; }
+
+    }
