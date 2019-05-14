@@ -29,7 +29,7 @@ public class ClienteDAO implements InterfazDAO<Cliente>{
         if (cli == null){
             System.err.println("No se pueden añadir nulos");
         }else{
-            mapa.put(cli.getCliente_id(), cli);
+            mapa.put(cli.getId(), cli);
         }
     }
     
@@ -52,7 +52,7 @@ public class ClienteDAO implements InterfazDAO<Cliente>{
     
     @Override
     public void eliminar(Cliente cli){
-        mapa.remove(cli.getCliente_id());
+        mapa.remove(cli.getId());
     }
     
     @Override
@@ -62,7 +62,7 @@ public class ClienteDAO implements InterfazDAO<Cliente>{
 
     @Override
     public void modificar(Cliente valor) {
-        Cliente cli = mapa.get(valor.getCliente_id());
+        Cliente cli = mapa.get(valor.getId());
         cli.setActivo(valor.isActivo());
         cli.setEmail(valor.getEmail());
         cli.setNombre(valor.getNombre());

@@ -40,6 +40,12 @@ public class ClienteInvitado extends Cliente{
         System.out.print("Invitado - ");
         super.mostrar();
         System.out.println(" Duración máxima: " + duracionMax);
+    }
+    
+    @Override
+    public String toString() {
+        //return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Cliente Invitado [" + id + ", " + nombre + ", " + getEmail() + ", " + duracionMax+"]";
     }  
     
 }

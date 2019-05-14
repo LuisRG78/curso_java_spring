@@ -95,7 +95,7 @@ public class Polimorfismo {
         */
         //añado clientes al HashMap
         for(Cliente cliente: clientes){
-            listadoClientes.put(cliente.getNombre() + "-" + cliente.getCliente_id(), cliente);
+            listadoClientes.put(cliente.getNombre() + "-" + cliente.getId(), cliente);
         }
         
         //recorro el HashMap
@@ -138,7 +138,7 @@ public class Polimorfismo {
       
         //añado clientes al TreeMap
         for(Cliente cliente: clientes){
-            listadoClientes.put(cliente.getNombre() + "-" + cliente.getCliente_id(), cliente);
+            listadoClientes.put(cliente.getNombre() + "-" + cliente.getId(), cliente);
         }
         
         //recorro el TreeMap

@@ -31,12 +31,12 @@ public class GenericoDAO<T extends Entidad> implements InterfazDAO<T>{
         if (gen == null){
             System.err.println("No se pueden añadir nulos");
         }else{
-            mapa.put(gen, gen.);
+            mapa.put(gen.getId(), gen);
         }
     }
     
     //método que devuelve un genérico pasándole el id
-    public Generico leerUno(long id){
+    public T leerUno(long id){
         if(mapa.containsKey(id)){
             return mapa.get(id);
         }
@@ -45,16 +45,16 @@ public class GenericoDAO<T extends Entidad> implements InterfazDAO<T>{
     }
      @Override
     public List<T> leerTodos() {
-        ArrayList<Generico> listaGenericos = new ArrayList<Generico>();
-        for (Map.Entry<Long, Generico> entrada : mapa.entrySet()){        
+        ArrayList<T> listaGenericos = new ArrayList<T>();
+        for (Map.Entry<Long, T> entrada : mapa.entrySet()){        
             listaGenericos.add(entrada.getValue());           
         }
         return listaGenericos;
     }
     
     @Override
-    public void eliminar(Generico gen){
-        mapa.remove(gen.getGenerico_id());
+    public void eliminar(T gen){
+        mapa.remove(gen.getId());
     }
     
     @Override

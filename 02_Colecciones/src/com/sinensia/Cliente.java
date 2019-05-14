@@ -5,14 +5,13 @@
  */
 package com.sinensia;
 
-import com.sinensia.dao.GenericoDAO;
 import java.util.Date;
 
 /**
  *
  * @author Admin
  */
-public class Cliente extends Entidad{
+public class Cliente extends Entidad implements Comparable<Cliente>{
     
     protected String nombre;
     private Date fecha_nac;
@@ -72,4 +71,14 @@ public class Cliente extends Entidad{
         //return super.toString(); //To change body of generated methods, choose Tools | Templates.
         return "Cliente [" + id + ", " + nombre + ", " + email + "]";
     }     
+
+    @Override
+    public int compareTo(Cliente otroCli) {
+        if(this.nombre.compareTo(otroCli.nombre) == 0){
+            return email.compareTo(otroCli.email);
+        }else{
+            return nombre.compareTo(otroCli.nombre);
+        }
+        //To change body of generated methods, choose Tools | Templates.
+    }
 }

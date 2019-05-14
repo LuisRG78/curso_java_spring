@@ -13,7 +13,7 @@ import com.sinensia.Producto;
  *
  * @author Admin
  */
-public class probandoDAO {
+public class ProbandoDAO {
     
     public static void probarCliente(){
         GenericoDAO repoCli = new GenericoDAO();

@@ -5,14 +5,15 @@
  */
 package com.sinensia;
 
-import static com.sinensia.dao.probandoDAO.probarCliente;
-import static com.sinensia.dao.probandoDAO.probarProducto;
+import com.sinensia.dao.ProbandoDAO;
 import com.sinensia.genericos.ProbandoGenericos;
 import com.sinensia.pruebas.Colecciones;
 import com.sinensia.pruebas.Fechas;
 import static com.sinensia.pruebas.Herencia.probandoHerencia;
 import com.sinensia.pruebas.Polimorfismo;
 import com.sinensia.poo_avanzado.ProbandoAnimales;
+import com.sinensia.pruebas.Ficheros;
+import static com.sinensia.pruebas.TratamientoCadenas.pruebasString;
 
 /**
  *
@@ -37,7 +38,17 @@ public class Main {
         //Polimorfismo.polimorfeandoConTreeMap();
         //ProbandoAnimales.probarClasesAbstractas();
         //ProbandoGenericos.probarMetodo();
-        probarCliente();
-        //probarProducto();
-    }   
+        //ProbandoDAO.probarCliente();
+        //ProbandoDAO.probarProducto();
+        try{
+            //Ficheros.probarEscritura();
+        }catch(Exception ex){
+            System.err.println("");
+        }
+         //Ficheros.escrituraStream();
+         //Ficheros.lecturaFich();
+         //Colecciones.comparaciones();
+         //pruebasString();
+    }  
+    
 }

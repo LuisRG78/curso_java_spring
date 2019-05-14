@@ -99,13 +99,25 @@ public class Colecciones {
         
         for (int i=0; i < listaClientes.size(); i++){
             Cliente cliente = listaClientes.get(i);
-            System.out.println("Cliente " + cliente.getCliente_id() + 
+            System.out.println("Cliente " + cliente.getId() + 
                     "--> Nombre: " + cliente.getNombre() + 
                      ", Email: " + cliente.getEmail());
         }
         
         for (Cliente cliente : listaClientes) {
             System.out.println("Cliente: " + cliente.getNombre());
+        }
+    }
+    
+    public static void comparaciones(){
+        Cliente luis = new Cliente(2, "Luis", null);
+        Cliente bea = new Cliente(3, "Bea", null);
+        if(bea.compareTo(luis) < 0){
+            System.out.println("Bea es menor que Luis");
+        }else if(bea.compareTo(luis) == 0){
+            System.out.println("Bea es igual que Luis");
+        }else if(bea.compareTo(luis) > 0){
+            System.out.println("Bea es mayor que Luis");
         }
     }
     

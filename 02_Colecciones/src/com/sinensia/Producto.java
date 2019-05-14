@@ -11,7 +11,6 @@ package com.sinensia;
  */
 public class Producto extends Entidad{
     
-    private long prod_id;
     private String nombre_prod;
     private double precio;
     private int stock;
@@ -64,7 +63,7 @@ public class Producto extends Entidad{
     
     public void mostrar(){
         System.out.println("Producto: " + nombre_prod);
-        System.out.println(" Id: " + this.prod_id);
+        System.out.println(" Id: " + this.id);
         System.out.println(" Precio: " + this.getPrecio());
         System.out.println(" Stock: " + stock);
     }
@@ -72,6 +71,6 @@ public class Producto extends Entidad{
     @Override
     public String toString() {
         //return super.toString(); //To change body of generated methods, choose Tools | Templates.
-        return "Producto [" + prod_id + ", " + nombre_prod + ", " + precio + ", " + stock + "]";
+        return "Producto [" + id + ", " + nombre_prod + ", " + precio + ", " + stock + "]";
     }     
 }
