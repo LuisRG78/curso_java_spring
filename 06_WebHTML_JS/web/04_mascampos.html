@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Otros campos FORM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Otros campos FORM</h1>
+        <form action="#" method="post" enctype="text/plain">
+            <input type="button" value="Boton JS" onclick="alert('Cuidaoooo!!!')"/>
+            <input type="button" value="Boton JS externo" onclick="mostrarMensaje('Hola de nuevo')"/>
+            
+            <br/><br/><label for="fichero">Fichero: </label>
+            <input type="file" id="fichero" name="fichero"/>
+            
+            <br/><br/><label for="Fecha">Fecha:</label>
+            <input type="datetime" id="fecha" name="fecha"/>
+            
+            <br/><br/><label for="passwd">Password:</label>
+            <input type="password" id="passwd" name="passwd"/>
+            
+            <br/><br/><label for="passwd-encriptada">Campo no visible</label>
+            <input type="hidden" id="passwd-encriptada" name="passwd-enncriptada" value="Kkjhhhr"/>
+            
+            <br/><br/>Otros campos<br/>
+            <input type="url" id="direccion-serv" name="direccion-serv"/>
+            <input type="range" name="rango" id="rango" min="-50" max="50">
+            <input type="tel" name="telefono" id="telefono" maxlength="9">
+            <input type="search" name="busqueda" id="busqueda"/>
+            
+             <br/><br/>Otros campos<br/>
+             <input type="checkbox" checked="checked" />Activo?
+             
+             <br/><br/><label for="radio">Selecciona uno:</label>
+             <input type="radio" id="ClienteNormal" name="radio" value="1" checked="checked">Cliente normal
+             <input type="radio" id= "ClienteInv" name="radio" value="2">Cliente invitado
+             <input type="radio" id="ClienteVip" name="radio" value="3">Cliente VIP
+             
+             <br/><br/>Frecuencia de viajes:
+             <select id="frecuencia" name="frecuencia">
+                 <option value="1">Varias veces a la semana</option>
+                 <option value="2">Una vez al día</option>
+                 <option value="3">Varias veces al día</option>
+                 <option value="4">Varias veces al mes</option>
+             </select>
+             
+             <br/><br/>Qué genero de cine te gusta:<br/>
+             <select id="generos" name="generos[]" multiple="multiple">
+                 <option value="1">Comedia</option>
+                 <option value="2">Drama</option>
+                 <option value="3">Ciencia-ficción</option>
+                 <option value="4">Documental</option>
+             </select>
+             
+             <br/><br/>Comentarios:<br/>
+             <textarea cols="30" rows="6" name="comentarios" id="comentarios" placeholder="Cuenta lo que te apetezca:"></textarea>
+                        
+            <br/><br/><input type="submit" id="enviar" name="enviar" value="Enviar">
+        </form>
+        <br/>
+        <table border="1">
+            <caption>Lista de productos</caption>
+            <tr>
+                <th>Nombre Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+            <tr>
+                <td>Libro</td>
+                <td>15 €</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Corcho</td>
+                <td>6 €</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Album</td>
+                <td>15 €</td>
+                <td>6</td>
+            </tr><tr>
+                <td>Lapiz</td>
+                <td>56 €</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <br/>
+        <img  alt="imagen picachu" src="images/detective-pikachu.png" 
+              width="256" height="144"/>
+        <img  alt="imagen picachu" src="images/detective-pikachu.png" 
+              style="width:20%; height:20%"/>
+        
+        <script src="js/04_mascampos.js"></script>
+    </body>
+</html>
