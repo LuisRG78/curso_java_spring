@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<!-- Comentario: Nodo raiz -->
+	<head>
+	<!-- Cabecera: Informaci�n de la p�gina -->
+		<meta charset="UTF-8" />
+		<title>Formulario con CSS</title>
+                <link rel="stylesheet" type="text/css" href="css/06_form_css.css">
+		
+	</head>
+	<body>
+	<!-- Cuerpo visible -->
+        <div class="margen-lateral">
+            <h1 class="centrar">Formulario con CSS en Hoja externa</h1>
+        </div>
+        <div class="margen-lateral">
+            <fieldset title="Formulario">            
+                <form action="mailto:correo@empresa.com" method="post" enctype="text/plain">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" size="30" maxlength="40"/>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" size="30" maxlength="255"/>
+                    </div>
+                    <div>
+                        <label for="edad">Edad:</label>
+                        <input type="number" name="edad" id="edad" max="80" min="18" step="5"/>
+                    </div>
+                    <div class="boton-div">
+                        <input type="submit" value="Enviar formulario" class="boton">
+                        <input type="reset" value="Borrar formulario" class="boton">
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <script>
+            var texto = "Un texto cualquiera";
+            var numero = 10.3434;
+            var  campoNombre = document.getElementById("nombre");
+            campoNombre.value = "";
+            document.getElementById("email").setAttribute("placeholder", "Introduzca su email");
+            document.getElementById("edad").value = "30";
+            
+        </script>
+	</body>
+
+</html>
