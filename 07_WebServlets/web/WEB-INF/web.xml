@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+    <display_name>Primer servlet</display_name>
+    <servlet>
+        <servlet-name>ServletRegistro</servlet-name>
+        <servlet-class>com.sinensia.RegistroServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+            <servlet-name>ServletRegistro</servlet-name>
+            <url-pattern>/registro</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -15,7 +15,7 @@
                 divDatos.innerHTML = "Datos de objetos: ";
                 var objCliente = new Object();
                 objCliente.nombre = "Juan";
-                objCliente.edad = 27;
+                objCliente.edad = 27; //objCliente["edad"] = 27;
                 objCliente["activo"] = true;
                 divDatos.innerHTML += "Nombre => " + objCliente["nombre"] + ", Activo => " + objCliente.activo + "<br/>";
                 objCliente.toString = function(){
@@ -54,6 +54,17 @@
             var btn = document.getElementById("btn");
             // btn.onclick = mostrarDatos;
             btn.addEventListener("click", mostrarDatos);
+            
+            class ClaseCliente {    //Azúcar sintáctico para lo mismo que antes de los objetos
+                constructor (nombre, edad, activo){
+                    this.nombre = nombre;
+                    this.edad = edad;
+                    this.activo = activo;
+                }
+                toString() {
+                    return "Cliente => " + this.nombre;
+                }
+            }
         </script>
     </body>
 </html>

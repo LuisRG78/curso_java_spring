@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "c46a3292-eeed-482f-b711-e5e1668d47f2",
+		"name": "Peticiones clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8084/07_WebServlets/registro?nombre=nuevo&edad=35&email=funcionas%40gmail.com&passwd=aaaa&activo=on",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/07_WebServlets/registro?nombre=nuevo&edad=35&email=funcionas%40gmail.com&passwd=aaaa&activo=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"07_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "nuevo"
+						},
+						{
+							"key": "edad",
+							"value": "35"
+						},
+						{
+							"key": "email",
+							"value": "funcionas%40gmail.com"
+						},
+						{
+							"key": "passwd",
+							"value": "aaaa"
+						},
+						{
+							"key": "activo",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/07_WebServlets/registro?nombre=nuevo&edad=35&email=nuevo%40gmail.com&passwd=aaaa&activo=on",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/07_WebServlets/registro?nombre=nuevo&edad=35&email=nuevo%40gmail.com&passwd=aaaa&activo=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"07_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "nuevo"
+						},
+						{
+							"key": "edad",
+							"value": "35"
+						},
+						{
+							"key": "email",
+							"value": "nuevo%40gmail.com"
+						},
+						{
+							"key": "passwd",
+							"value": "aaaa"
+						},
+						{
+							"key": "activo",
+							"value": "on"
+						}
+					]
+				},
+				"description": "el email es unique"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/07_WebServlets/registro?nombre=correoRepetido&edad=35&email=nuevo%40gmail.com&passwd=aaaa&activo=on",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/07_WebServlets/registro?nombre=correoRepetido&edad=35&email=nuevo%40gmail.com&passwd=aaaa&activo=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"07_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "correoRepetido"
+						},
+						{
+							"key": "edad",
+							"value": "35"
+						},
+						{
+							"key": "email",
+							"value": "nuevo%40gmail.com"
+						},
+						{
+							"key": "passwd",
+							"value": "aaaa"
+						},
+						{
+							"key": "activo",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
