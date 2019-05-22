@@ -61,10 +61,11 @@ public class ClienteServicioTest {
     @Test
     public void clienteMal_OtrosCampos(){
         servCli.insertar("Nombre bien", "", "ok12", "30", "on");
+        assertNull(servCli.obtenerUno(""));
         servCli.insertar("Bien", "clien@ok.com", "", "30", "on");
         servCli.insertar("Ok", "client_50@ok.com", "ok12", "30", "on");
         servCli.insertar("Nombre bien", "client_55@ok.com", "ok12", "30", "on");
-        assertNull(servCli.obtenerUno(""));
+       
         assertNull(servCli.obtenerUno("clien@ok.com"));
         assertNull(servCli.obtenerUno("client_50@ok.com"));
         assertNull(servCli.obtenerUno("client_55@ok.com"));    
@@ -75,19 +76,38 @@ public class ClienteServicioTest {
         assertNotNull(
             servCli.insertar("luismi", "email1@ok.com", "", "36", "on"));
         Cliente cliente = servCli.obtenerUno("email1@ok.com");                 
-        servCli.modificar(cliente.getId(), "Cli", "email1@ok.com", "NUevaPSWD", "30", "on");
+        servCli.modificar(cliente.getId(), "Cli", "email1@ok.com", "NuevaPSWD", "30", "on");
         cliente = servCli.obtenerUno("email1@ok.com");
+        assertEquals(cliente.getPassword(), "nuevaPSWD");
         servCli.eliminar("email1@ok.com");
+        assertNull(servCli.obtenerUno("email1@ok.com"));
     }  
     
     @Test
     public void clienteModificacion_Mal(){
         assertNotNull(
             servCli.insertar("luismi", "email1@ok.com", "ok12", "30", "on"));
-        Cliente cliente = servCli.obtenerUno("email1@ok.com");                 
-        servCli.modificar(cliente.getId(), "Cli", "mmm@ok.com", "NUevaPSWD", "hh", "on");
+        Cliente cliente = servCli.obtenerUno("email1@ok.com");  
+        assertNull(
+            servCli.modificar(cliente.getId(), "Cli", "mmm@ok.com", "NuevaPSWD", "hh", "on"));
+        cliente = servCli.obtenerUno("email1@ok.com");
         assertEquals(cliente.getEdad(), 30);
         servCli.eliminar("email1@ok.com");
         assertNull(servCli.obtenerUno("email1@ok.com"));
     }  
+    
+    @Test
+    public void eliminarClientePorID(){
+        assertNotNull(
+            servCli.insertar("luismi", "email1@ok.com", "ok12", "30", "on"));
+        Cliente cliente = servCli.obtenerUno("email1@ok.com");
+        servCli.eliminar(cliente.getId());
+        assertNull(servCli.obtenerUno(cliente.getId()));
+    }
+    
+    @Test
+    public void eliminarClientePorEmail(){
+        
+    }
+    
 }

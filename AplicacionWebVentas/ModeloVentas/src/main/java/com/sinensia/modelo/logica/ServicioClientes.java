@@ -1,7 +1,7 @@
 package com.sinensia.modelo.logica;
 
 import com.sinensia.modelo.Cliente;
-import com.sinensia.modelo.dao.ClienteDAO;
+import com.sinensia.modelo.dao.MySQLClienteDAO;
 
 /**
  *
@@ -9,10 +9,10 @@ import com.sinensia.modelo.dao.ClienteDAO;
  */
 public class ServicioClientes {
     
-    private ClienteDAO dao;
+    private MySQLClienteDAO dao;
     
     public ServicioClientes(){
-        dao = new ClienteDAO();
+        dao = new MySQLClienteDAO();
     }
     
     public Cliente insertar(String nombre, String email, String passwd, String edad, String activo){
@@ -22,7 +22,7 @@ public class ServicioClientes {
             short iActivo = (short)("on".equals(activo)?1:0);
 
             Cliente nuevoCli = new Cliente(null, nombre, email, iEdad, iActivo, passwd);
-            dao.insertar(nuevoCli);
+            nuevoCli = dao.insertar(nuevoCli);
             return nuevoCli;
         }else{
             return null;

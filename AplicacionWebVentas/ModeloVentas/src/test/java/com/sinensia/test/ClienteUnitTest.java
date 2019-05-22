@@ -56,7 +56,7 @@ public class ClienteUnitTest {
         daoCli.insertar(new Cliente(1,"Pru1", "pru1@email.com", (short) 21, (short) 1, "Pru111"));
         daoCli.insertar(new Cliente(1,"Pru2", "pru2@email.com", (short) 22, (short) 2, "Pru222"));
         
-        assertEquals(daoCli.obtenerTodos().size(), 2);
+        assertEquals("2", daoCli.obtenerTodos().size());
         Cliente cli = daoCli.obtenerUno(2);
         assertTrue(cli.getEmail().equals("pru2@email.com"));
     }
