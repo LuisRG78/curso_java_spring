@@ -1,14 +1,9 @@
-/* 
- GPL 3.0
+/* GPL 3.0
  */
-console.log("hola por consola");
+console.log("Hola por consola");
 console.error("Mensaje de error");
+document.write("<h2>Subtitulo de la web</h2>");
 
-document.write("<h2>Subtítulo de la web</h2>");
-
-function mostrarMensaje(texto){
-    alert("Desde fuera te digo: " + texto);
+function mostrarMensaje(mensaje) {
+    alert("Te dicen que " + mensaje);    
 }
-
-
-

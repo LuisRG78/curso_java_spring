@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Otros campos FORM</title>
@@ -11,30 +7,22 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Añadir producto:</h1>
-        <form id="aniadirFila" method="post" action="05_tablas_js.html">
-            <br/><label for="nombre">Nombre:</label>
-            <input type="text" name="vaina" id="vaina"/>
-            
-            <br/><br/><label for="producto">Producto:</label>
-            <input type="text" name="prod"  id="prod"/>
-            
-            <br/><br/><label for="precio">Precio:</label>
-            <input type="number" name="precio" id="precio"/>
-            
-            <br/><br/><label for="stock">Stock:</label>
-            <input type="number" name="stock" id="stock"/>
-            
-            <br/><br/><input type="button" id="enviar" name="enviar" value="Añadir Producto" onclick="aniadirFila()"/>
-            <br/><input type="button" id="enviar2" name="enviar" value="Añadir Producto V2" onclick="aniadirFila2()"/>
-            <br/><input type="button" id="enviar3" name="enviar" value="Añadir Producto V3" onclick="aniadirFila3()"/>
+        <h1>Tabla generada JS</h1>
+        <form>
+            <input id="nombre"  name="nombre" type="text"/>
+            <input id="tipo"  name="tipo" type="text"/>
+            <input id="precio"  name="precio" type="number"/>
+            <input id="cantidad"  name="cantidad" type="number"/>
+            <input type="button" value="Añadir" onclick="agregarCosa()"/>
+            <input type="button" value="Añadir V2" 
+                   onclick="agregarCosaDirectamenteATabla()"/>
+            <input type="button" value="Añadir V3" 
+                   onclick="agregarCosaDirectamenteATablaInnerHTML()"/>  
         </form>
-        
-        <h1>Tabla generada con JS</h1>
         <table border="2">
-            
-        </table>     
-        
+        </table>        
         <script src="js/05_tabla_js.js"></script>
+        <script src="js/04_mascampos.js"></script>
     </body>
 </html>
+

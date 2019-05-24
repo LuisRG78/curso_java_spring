@@ -2,58 +2,27 @@
     Created on : 17-may-2019, 13:26:06
     Author     : Admin
 */
-
-/*SELECTOR GLOBAL. Se utiliza para quitar márgenes y padding*/
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 0px;    
 }
-
-/*SELECTOR DE ETIQUETA*/
+/* Selector de etiqueta */
 form {
-    padding: 10px;
     background-color: #AAFFAA;
-    display: block;
-}
-
-/*selector de hijos de una etiqueta*/
-form div {
-    display: block;
     padding: 10px;
+    display: block;
 }
-
+.margen-lateral {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+form  div /* , form input*/ {
+    display: block;
+}
 label {
     width: 200px;
     display: inline-block;
 }
-
-form > div {
-    padding: 10px;
-}
-/*CLASES. Son agrupaciones de propiedades que luego podremos utilizar donde queramos*/
-.margen-lateral{
-    margin: 0 20%;
-}
-
-.element-padding {
-    padding: 2px 2px 1px 1px;
-}
-
-.boton-div {
-    display: inline;
-    flex: row;
-   
-}
-.boton {
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.centrar {
-    text-align: center;
-}
-
-/*Selectores de ID*/
 #email {
     font-size: 1.2em;
 }
