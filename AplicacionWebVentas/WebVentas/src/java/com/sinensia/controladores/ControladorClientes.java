@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sinensia.modelo.logica.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.Cookie;
 
 /**
  *
@@ -63,6 +64,10 @@ public class ControladorClientes extends HttpServlet {
         
         String nombre = request.getParameter("nombre");
         nombre = nombre != null ? nombre : "";
+        
+        Cookie galleta = new Cookie("nombre_busqueda", nombre);
+        response.addCookie(galleta);
+        
         ServicioClientes srvCli = new ServicioClientes();
         List<Cliente> listado = srvCli.obtenerTodos();
         
@@ -76,7 +81,7 @@ public class ControladorClientes extends HttpServlet {
         //enviar un objeto de java desde el controlador a la vista, adjuntado a la peticion
         //para que cuando redirijamos a la vista
         //El bean es listaPorNombre
-        request.setAttribute("listaPorNombre", listaPorNombre);
+        request.getSession().setAttribute("listaPorNombre", listaPorNombre);
         request.getRequestDispatcher("listado_jstl.jsp").forward(request, response);
     }
 
