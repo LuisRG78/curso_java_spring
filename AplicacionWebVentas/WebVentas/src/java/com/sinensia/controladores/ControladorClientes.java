@@ -70,9 +70,7 @@ public class ControladorClientes extends HttpServlet {
         
         ServicioClientes srvCli = new ServicioClientes();
         List<Cliente> listado = srvCli.obtenerTodos();
-        
-        List<Cliente> listaPorNombre = new ArrayList<>();
-        
+        List<Cliente> listaPorNombre = new ArrayList<>();        
         for (Cliente cli: listado){
             if(cli.getNombre().contains(nombre)){
                 listaPorNombre.add(cli);
@@ -99,7 +97,7 @@ public class ControladorClientes extends HttpServlet {
         
         String nombre = request.getParameter("nombre");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String password = request.getParameter("password_encrip");
         String edad = request.getParameter("edad");
         String activo = request.getParameter("activo");
         

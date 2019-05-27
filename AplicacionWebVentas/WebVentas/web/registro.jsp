@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
         <title>Registro</title>
@@ -13,7 +14,7 @@ and open the template in the editor.
     <body>
         <%@include file="cabecera.jsp" %>
         <h2>Registro</h2>
-        <form name="form1" method="post" action="clientes.do">
+        <form name="form1" method="post" id ="form1" action="clientes.do">
             <label for="nombre">Nombre:</label> 
             <input id="nombre" name="nombre" type="text" 
                    required="required" size="50" maxlength="50"/>
@@ -34,8 +35,11 @@ and open the template in the editor.
             <input id="password" name="password" type="password" 
                    required="required" size="50" maxlength="50"/>
             <br/>
+            <input type="hidden" name="password_encrip" id="password_encrip">
             <input type="reset" value="Limpiar"/>
             <input type="submit" value="Enviar"/>
         </form>
+        <script src="js/md5.min.js"></script>
+        <script src="js/encriptacion.js"></script>
     </body>
 </html>

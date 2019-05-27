@@ -4,13 +4,13 @@
     Author     : Admin
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.sinensia.modelo.Cliente"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.List"%><
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--Se hace un cast para convertir el objeto que devuelve el getAtributes a un arraylist --%>
-<% List<Cliente> listaCliPorNombre = (ArrayList<Cliente>)request.getAttribute("listaPorNombre"); %>
+<%--<% List<Cliente> listaCliPorNombre = (ArrayList<Cliente>)request.getAttribute("listaPorNombre"); %> --%>
 <jsp:useBean id="listaPorNombre" type="java.util.ArrayList<Cliente>" scope="session">
     <jsp:getProperty property="*" name="listaPorNombre"/>
 </jsp:useBean>
@@ -23,8 +23,7 @@
     </head>
     <body>
         <%@include file="cabecera.jsp" %>
-        <h2>Listado Clientes</h2>
-       
+        <h2>Listado Clientes</h2>      
         <table border="2">
             <thead>
                 <tr>
@@ -51,9 +50,7 @@
                 <td>${cli.edad}</td>
                 <td>${cli.activo}</td>                
             </tr>
-            </c:forEach>
-            
-                  
+            </c:forEach>                  
         </table>
     </body>
 </html>
