@@ -3,11 +3,10 @@ function encriptar(valor){
     var reverseArray = splitString.reverse();
     var joinArray = reverseArray.join("");
     joinArray ="K7" + joinArray; + "Up";
-    //md5(joinArray);
+    md5(joinArray);
     var hash = md5.create();
     hash.update(joinArray);
-    return hash.hex();
-   
+    return hash.hex(); 
 }
 
 function antesDeEnviar(){

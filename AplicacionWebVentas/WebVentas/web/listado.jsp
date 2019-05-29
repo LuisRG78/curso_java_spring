@@ -15,7 +15,6 @@ List<Cliente> clientes = srvCli.obtenerTodos();
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado Clientes</title>
     </head>
@@ -51,7 +50,7 @@ List<Cliente> clientes = srvCli.obtenerTodos();
             <% } %>
             
             <%-- Manera molona --%>
-            
+            <%--    
             <% for (Cliente cli: clientes){ %>
              <tr>
                  <td> <% out.println(cli.getNombre());%> </td>
@@ -60,7 +59,7 @@ List<Cliente> clientes = srvCli.obtenerTodos();
                  <td> <% out.println(cli.getActivo());%> </td>
              </tr>
             <% } %>
-            
+            --%>
         </table>
     </body>
 </html>

@@ -23,8 +23,6 @@ public class Cliente extends Entidad implements Serializable {
     
     private String password;
     
-    private List<Compra> compraList;
-    
     public Cliente() {
     }
 
@@ -32,13 +30,11 @@ public class Cliente extends Entidad implements Serializable {
         super(id);
     }
 
-    public Cliente(Integer id, String nombre, String email, short edad, short activo, String password) {
-        super(id);
+    public Cliente(String nombre, String email, short edad, short activo) {       
         this.nombre = nombre;
         this.email = email;
         this.edad = edad;
         this.activo = activo;
-        this.password = password;
     }
     public String getNombre() {
         return nombre;
@@ -72,21 +68,7 @@ public class Cliente extends Entidad implements Serializable {
         this.activo = activo;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public List<Compra> getCompraList() {
-        return compraList;
-    }
-
-    public void setCompraList(List<Compra> compraList) {
-        this.compraList = compraList;
-    }
+    
 
     @Override
     public int hashCode() {

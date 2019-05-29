@@ -61,8 +61,8 @@ public class ControladorClientes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String nombre = request.getParameter("nombre");
+        //Aqui cogemos el formulario de búsqueda
+        String nombre = request.getParameter("nombre_busq");
         nombre = nombre != null ? nombre : "";
         
         Cookie galleta = new Cookie("nombre_busqueda", nombre);

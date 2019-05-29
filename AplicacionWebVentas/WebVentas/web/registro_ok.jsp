@@ -1,4 +1,5 @@
 <%@page import="com.sinensia.modelo.logica.ServicioClientes"%>
+<!DOCTYPE html>
 <%-- 
     Document   : registro_ok.jsp
     Created on : 24-may-2019, 9:59:03
