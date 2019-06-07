@@ -25,12 +25,17 @@ public class ProductoRestController extends HttpServlet {
     @Override
     public void init(){
         servProd = ServicioProductoSingleton.getInstancia();
+        servProd.insertar(new Producto("Peine", "10 euros"));
+        servProd.insertar(new Producto("Pito", "20 euros"));
+        servProd.insertar(new Producto("Cepillo", "30 euros"));
     }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException 
     {
+        //doOptions(request, response);
+        
         //Instanciamos un printWriter a partir de la respuesta, para luego guardar lo que vamos devolver al cliente
         /* Clase que nos permite escribir con formato texto tanto en la salida estándar, como en ficheros, en cadenas, o en streams.*/
         PrintWriter escritorRespuesta = response.getWriter();
@@ -41,16 +46,7 @@ public class ProductoRestController extends HttpServlet {
         Gson gson = new Gson();
         
         ArrayList<Producto> listaProductos = servProd.obtenerTodos();
-       /*
-        //Hacemos la modificación usando nuestra clase Singleton
-        JsonArray arrayProd = new JsonArray();
-        
-        for (Producto prod : listaProductos) {
-            String strProd = "{ nombre : \"" + prod.getNombre() + "\" , \\n";
-            strProd += "\"precio\" : \"" + prod.getPrecio() + "\" \\n }";
-            arrayProd.add(strProd);
-        }
-        
+       
         //Concertimos el objeto producto a JSON*/
         String jsonRespuesta = gson.toJson(listaProductos);
         //Devolvemos al cliente el JSON de lo que hemos hecho
@@ -95,11 +91,6 @@ public class ProductoRestController extends HttpServlet {
         Producto producto = gson.fromJson(textoJson.toString(), Producto.class);
         
         System.out.println(">>>> " + producto.getNombre());
-        //hacemos modificaciones en el producto
-        /*producto.setNombre(producto.getNombre().toUpperCase());
-        producto.setPrecio("5000 bolívares");*/
-        //Hacemos la modificación usando nuestra clase Singleton
-        //ServicioProductoSingleton sps = ServicioProductoSingleton.getInstancia();
         
         servProd.modificar(producto);
         
@@ -112,6 +103,7 @@ public class ProductoRestController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException {
+         doOptions(request, response);
         //Instanciamos un printWriter a partir de la respuesta, para luego guardar
         //lo que vamos devolver al cliente
         /* Clase que nos permite escribir con formato texto tanto en la salida estándar, como en ficheros, en cadenas, o en streams.*/
@@ -146,20 +138,23 @@ public class ProductoRestController extends HttpServlet {
         Producto producto = gson.fromJson(textoJson.toString(), Producto.class);
         ArrayList<Producto> listaProducto = servProd.obtenerTodos();
         
-        listaProducto.add(producto);
-            
+        listaProducto.add(producto);            
         System.out.println(">>>> " + producto.getNombre());
-        //hacemos modificaciones en el producto
-        /*producto.setNombre(producto.getNombre().toUpperCase());
-        producto.setPrecio("5000 bolívares");*/
-        //Hacemos la modificación usando nuestra clase Singleton
-        //ServicioProductoSingleton sps = ServicioProductoSingleton.getInstancia();
-        
-        
+       
         //Convertimos el objeto producto a JSON
         String jsonRespuesta = gson.toJson(listaProducto);
         
         //Devolvemos al cliente el JSON de lo que hemos hecho
         escritorRespuesta.println(jsonRespuesta);
+    }
+    
+    //@Override
+    protected void doOptions(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+       response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+       response.setHeader("Access-Control-Allow-Methods", "POST");
+       response.setStatus(HttpServletResponse.SC_OK);
+        
     }
 }
